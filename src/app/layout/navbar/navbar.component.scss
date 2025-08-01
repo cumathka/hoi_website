@@ -1,0 +1,47 @@
+.navbar {
+  background-color: var(--blue-100);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.navbar-brand {
+  font-family: var(--text-h1-font-family);
+  font-weight: var(--text-h1-font-weight);
+  font-size: 2rem;
+  color: var(--blue-600);
+  letter-spacing: 1px;
+}
+
+.body-lead {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-link {
+  font-family: var(--text-regular-font-family);
+  font-weight: var(--text-regular-font-weight);
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.nav-link.active,
+.nav-link.router-link-active {
+  font-weight: bold;
+  color: var(--blue-600) !important;
+}
+
+.input-group .form-control {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.input-group .btn {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+@media (max-width: 992px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .body-lead {
+    font-size: 1rem;
+  }
+}
