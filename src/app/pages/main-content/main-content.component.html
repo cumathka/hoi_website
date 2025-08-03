@@ -1,0 +1,39 @@
+<main class="main-content">
+  <section class="content-section">
+    <h2>Hier kommen Sie weiter</h2>
+    <p>
+      Wir freuen uns, Sie auf unserer Plattform begrüssen zu dürfen! Wir wissen, dass der Start in einem
+      neuen Land viele Herausforderungen mit sich bringt, aber auch unzählige Chancen bietet.
+      <br><br>
+      Hier finden Sie wertvolle Informationen und hilfreiche Angebote, die Ihnen den Start in
+      Uri und der Schweiz erleichtern sollen.<br><br>
+      Entdecken Sie die vielfältigen Möglichkeiten, die
+      Uri zu bieten hat. Von Sprachkursen über Bewerbungstipps bis hin zu Veranstaltungen – wir sind für Sie
+      da und unterstützen Sie auf eurem Weg.<br>
+      Lassen Sie uns gemeinsam diese Reise antreten, voneinander
+      lernen und uns gegenseitig helfen. Wir freuen uns darauf, Sie kennenzulernen!
+    </p>
+  </section>
+  <section class="card-section">
+    <div class="card-grid">
+      <a *ngFor="let card of cards" [routerLink]="card.route" class="card-item">
+        <div class="card-inner">
+          <img [src]="card.icon" [alt]="card.title" />
+          <h3>{{ card.title }}</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section class="event-section">
+    <h2>Events</h2>
+    <p>
+      Entdecken Sie Veranstaltungen in Uri und Umgebung, die Ihnen helfen, neue Kontakte zu knüpfen und sich
+      zu integrieren.
+    </p>
+    <div class="event-image">
+      <!-- <app-the-map></app-the-map> -->
+      <!-- Harita componentini sonra ekleyeceğiz -->
+      <img src="/assets/map-placeholder.jpg" alt="Map" style="width:100%;max-width:700px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);" />
+    </div>
+  </section>
+</main>

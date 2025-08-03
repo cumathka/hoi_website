@@ -1,0 +1,23 @@
+<section class="hero-section">
+  <div class="hero-bg">
+    <img src="/assets/1.jpg" alt="Hero Background" />
+    <div class="hero-overlay">
+      <div class="hero-box">
+        <div class="hero-title-row">
+          <img src="/assets/logo1.png" alt="Uri Flag" class="uri-flag" />
+          <h1>Griäzi! Willkommen!</h1>
+        </div>
+        <div class="greetings">
+          <div *ngFor="let greeting of greetings" class="greeting">
+            {{ greeting.text }}
+            <span class="lang">{{ greeting.lang }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="orange-bar">
+    <h2>Gemeinsam Weg und Wissen Teilen</h2>
+    <p>{{ translations[currentIndex].text }}</p>
+  </div>
+</section>
