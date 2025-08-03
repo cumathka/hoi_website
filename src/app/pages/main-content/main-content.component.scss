@@ -1,61 +1,23 @@
-.main-content {
-  background: #fff;
-  padding: 40px 0 0 0;
-}
-
 .content-section {
   max-width: 900px;
   margin: 0 auto 32px auto;
   padding: 0 24px;
+  text-align: center;
+
   h2 {
     color: #e67c1e;
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 12px;
+    /* text-align: center; // Gerek yok, üstte var */
   }
   p {
     color: #333;
     font-size: 1.1rem;
     line-height: 1.6;
-  }
-}
-
-.card-section {
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-  padding: 0 24px;
-  .card-grid {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .card-item {
-    text-decoration: none;
-    .card-inner {
-      background: #0097a7;
-      color: #fff;
-      border-radius: 12px;
-      padding: 24px 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      transition: background 0.2s;
-      &:hover {
-        background: #00bcd4;
-      }
-      img {
-        width: 64px;
-        height: 64px;
-        margin-bottom: 12px;
-      }
-      h3 {
-        margin: 0;
-        font-size: 1.1rem;
-        font-weight: 600;
-      }
-    }
+    margin: 0 auto 12px auto;
+    max-width: 800px;
+    /* text-align: center; // Gerek yok, üstte var */
   }
 }
 
@@ -63,6 +25,8 @@
   max-width: 900px;
   margin: 0 auto 40px auto;
   padding: 0 24px 40px 24px;
+  text-align: center;
+
   h2 {
     color: #e67c1e;
     font-size: 1.6rem;
@@ -78,5 +42,59 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+
+.card-section {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 0 24px;
+  text-align: center; // Kart başlıkları da ortalansın
+
+  .card-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .card-item {
+    text-decoration: none;
+    .card-inner {
+      background: #0097a7;
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 32px;
+      min-width: 180px;
+      min-height: 180px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: background 0.2s;
+      &:hover {
+        background: #00bcd4;
+      }
+      img {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 12px;
+        object-fit: contain;
+      }
+      h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+        min-height: 24px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
   }
 }

@@ -12,24 +12,24 @@ import { RouterModule } from '@angular/router';
 export class MainContentComponent {
   cards = [
     {
-      title: 'Sprache',
+      title: 'Informationen',
       route: '/language',
-      icon: '/assets/icons/language.png',
+      icon: 'https://c.animaapp.com/m939jagjfdOBIu/img/union-8.svg',
     },
     {
-      title: 'Arbeit',
+      title: 'Lernen',
       route: '/work',
-      icon: '/assets/icons/work.png',
+      icon: 'https://c.animaapp.com/m939jagjfdOBIu/img/union-23.svg',
     },
     {
-      title: 'Leben',
+      title: 'Jobs',
       route: '/life',
-      icon: '/assets/icons/life.png',
+      icon: 'https://c.animaapp.com/m939jagjfdOBIu/img/union-11.svg',
     },
     {
       title: 'Events',
       route: '/events',
-      icon: '/assets/icons/events.png',
+      icon: 'https://c.animaapp.com/m939jagjfdOBIu/img/union-10.svg',
     },
   ];
 }

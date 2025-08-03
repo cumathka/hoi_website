@@ -1,11 +1,4 @@
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  ChangeDetectorRef,
-  ChangeDetectionStrategy,
-  NgZone,
-} from '@angular/core';
+import { Component, NgZone, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,12 +6,11 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss'],
-  imports: [CommonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule]
 })
 export class HeroSectionComponent implements OnInit, OnDestroy {
   currentIndex = 0;
-  private rotateInterval: ReturnType<typeof setInterval> | null = null;
+  rotateInterval: any;
   translations = [
     { lang: 'tr', text: 'Yolu ve bilgiyi birlikte paylaşmak' },
     { lang: 'ar', text: 'مشاركة الطريق والمعرفة معا' },
@@ -29,7 +21,7 @@ export class HeroSectionComponent implements OnInit, OnDestroy {
     { lang: 'ur', text: 'راستہ اور علم کا مشترکہ اشتراک' },
     { lang: 'ku', text: 'Rê û zanînê bi hev re parve bikin' },
     { lang: 'am', text: 'መንገድና እውቀትን በአንድነት መካፈል' },
-    { lang: 'sw', text: 'Kushiriki njia na maarifa pamoja' },
+    { lang: 'sw', text: 'Kushiriki njia na maarifa pamoja' }
   ];
   greetings = [
     { text: 'مرحبا', lang: 'Arabisch' },
@@ -43,26 +35,18 @@ export class HeroSectionComponent implements OnInit, OnDestroy {
     { text: 'Zdravo', lang: 'Serbisch' },
   ];
 
-  constructor(private cdr: ChangeDetectorRef, private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
-    // Run the interval outside Angular zone to avoid extra change detection cycles.
     this.ngZone.runOutsideAngular(() => {
       this.rotateInterval = setInterval(() => {
-        // Re-enter Angular zone for change detection only when updating the UI.
-        this.ngZone.run(() => {
-          this.rotateText();
-          this.cdr.detectChanges();
-        });
+        this.ngZone.run(() => this.rotateText());
       }, 1500);
     });
   }
 
   ngOnDestroy() {
-    if (this.rotateInterval) {
-      clearInterval(this.rotateInterval);
-      this.rotateInterval = null;
-    }
+    clearInterval(this.rotateInterval);
   }
 
   rotateText() {
